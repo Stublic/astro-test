@@ -1,10 +1,10 @@
 ---
 draft: false
-name: "Janette Lynch"
-title: "Senior Director"
+name: "Jurica Stublić"
+title: "Founder & Developer"
 avatar: {
-    src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?&fit=crop&w=280",
-    alt: "Janette Lynch"
+    src: "src/assets/profile-stu.png",
+    alt: "Jurica Stublić"
 }
 publishDate: "2022-11-07 15:39"
 ---
