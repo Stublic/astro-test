@@ -1,19 +1,18 @@
 ---
 import { Picture } from "@astrojs/image/components";
-import heroImage from "assets/hero-stu-development.svg";
+import heroImage from "assets/hero-landing-page.png";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
 ---
 
 <main
   class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
+  <div class="py-7 md:order-1 hidden md:block">
     <Picture
       src={heroImage}
-      alt="Stu development agency"
+      alt="High converting landing page"
       widths={[200, 400, 600]}
-      aspectRatio="2:2"
-      sizes="(max-width: 800px) 100vw, 590px"
+      sizes="(max-width: 800px) 100vw, 500px"
       loading="eager"
       format="avif"
     />
