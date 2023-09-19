@@ -4,6 +4,47 @@ import { Picture } from "@astrojs/image/components";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+// @ts-ignore
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    title: "Bring Your Own Design",
+    description:
+      "If you already have a design file, send it to us and we will use it's guidelines for creating your Landing page.",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "100% Google speed test score",
+    description:
+      "We render your entire page to static HTML, removing all JavaScript from your final build by default.",
+    icon: "bx:bxs-window-alt",
+  },
+  {
+    title: "Best Practices",
+    description:
+      " Uses HTTPS, Avoids deprecated APIs, Allows users to paste into input fields, Avoids requesting the geolocation permission on page load..",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Broad Integration",
+    description:
+      "Email marketing campains, and opt-in forms. What ever you need to start collecting conversions",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "SEO Enabled",
+    description:
+      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
+    icon: "bx:bxs-file-find",
+  },
+  {
+    title: "Social Media Icon Integration",
+    description:
+      "Connect you social media, and close the circle, moving customers in the right direction.",
+    icon: "bx:bxs-user",
+  },
+];
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
@@ -26,7 +67,27 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
         We love what we do and that's why we come up with the best possible solutions to help you set up and grow online quickly. We are your reliable partners you can count on.
       </p>
     </div>
-    <div class="flex items-center justify-center mx-auto max-w-4xl mt-12">
+
+
+
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+    <!-- <div class="flex items-center justify-center mx-auto max-w-4xl mt-12">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
           <div class="group">
@@ -55,6 +116,6 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           </div>
         ))
       }
-    </div>
+    </div> -->
   </Container>
 </Layout>
