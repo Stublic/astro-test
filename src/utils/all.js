@@ -7,3 +7,11 @@ export const getFormattedDate = (date) =>
         day: "numeric",
       })
     : "";
+
+    export default function StaticTimePickerLandscape() {
+      return (
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <StaticTimePicker orientation="landscape" />
+        </LocalizationProvider>
+      );
+    }
